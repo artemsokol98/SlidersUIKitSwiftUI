@@ -13,6 +13,7 @@
 		71510F2426737D9500AE91D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71510F2326737D9500AE91D3 /* Assets.xcassets */; };
 		71510F2726737D9500AE91D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71510F2626737D9500AE91D3 /* Preview Assets.xcassets */; };
 		71510F2A26737D9500AE91D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71510F2826737D9500AE91D3 /* LaunchScreen.storyboard */; };
+		71510F32267398DD00AE91D3 /* SliderFromUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71510F31267398DD00AE91D3 /* SliderFromUIKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		71510F2626737D9500AE91D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71510F2926737D9500AE91D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71510F2B26737D9500AE91D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71510F31267398DD00AE91D3 /* SliderFromUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFromUIKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				71510F1D26737D9300AE91D3 /* AppDelegate.swift */,
 				71510F1F26737D9300AE91D3 /* SceneDelegate.swift */,
 				71510F2126737D9300AE91D3 /* ContentView.swift */,
+				71510F31267398DD00AE91D3 /* SliderFromUIKit.swift */,
 				71510F2326737D9500AE91D3 /* Assets.xcassets */,
 				71510F2826737D9500AE91D3 /* LaunchScreen.storyboard */,
 				71510F2B26737D9500AE91D3 /* Info.plist */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71510F1E26737D9300AE91D3 /* AppDelegate.swift in Sources */,
+				71510F32267398DD00AE91D3 /* SliderFromUIKit.swift in Sources */,
 				71510F2026737D9300AE91D3 /* SceneDelegate.swift in Sources */,
 				71510F2226737D9300AE91D3 /* ContentView.swift in Sources */,
 			);
