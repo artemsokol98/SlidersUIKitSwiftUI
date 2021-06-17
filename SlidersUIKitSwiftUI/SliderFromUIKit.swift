@@ -9,28 +9,15 @@ import SwiftUI
 import Foundation
 
 struct SliderFromUIKit: UIViewRepresentable {
-    final class Coordinator: NSObject {
-        
-        var value: Binding<Double>
-        init(value: Binding<Double>) {
-            self.value = value
-        }
-
-        @objc func valueChanged(_ sender: UISlider) {
-          self.value.wrappedValue = Double(sender.value)
-        }
-      }
-
+    
       @Binding var value: Double
-      var target: Int
-
+      let alpha: Int
+    
       func makeUIView(context: Context) -> UISlider {
-        let slider = UISlider(frame: .zero)
-        slider.thumbTintColor = UIColor(displayP3Red: 1.0, green: 0.0, blue: 0.0, alpha: calculateOpacity())
+        let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 100
         slider.minimumTrackTintColor = .blue
-        slider.value = Float(value)
 
         slider.addTarget(
           context.coordinator,
@@ -42,22 +29,33 @@ struct SliderFromUIKit: UIViewRepresentable {
       }
 
       func updateUIView(_ uiView: UISlider, context: Context) {
-        uiView.value = Float(self.value)
-        uiView.thumbTintColor = UIColor(displayP3Red: 1.0, green: 0.0, blue: 0.0, alpha: calculateOpacity())
+        uiView.value = Float(value)
+        uiView.thumbTintColor = .red.withAlphaComponent(CGFloat(alpha) / 100)
       }
 
-      func makeCoordinator() -> SliderFromUIKit.Coordinator {
+      func makeCoordinator() -> Coordinator {
         Coordinator(value: $value)
       }
     
-     func calculateOpacity() -> CGFloat {
-        let difference = abs(target - lround(value))
-        return CGFloat((100.0 - Double(difference))/100.0)
-    }
+}
+
+extension SliderFromUIKit {
+    class Coordinator: NSObject {
+        
+        @Binding var value: Double
+        
+        init(value: Binding<Double>) {
+            self._value = value
+        }
+
+        @objc func valueChanged(_ sender: UISlider) {
+          value = Double(sender.value)
+        }
+      }
 }
 
 struct SliderFromUIKit_Previews: PreviewProvider {
     static var previews: some View {
-        SliderFromUIKit(value: .constant(0.5), target: 50)
+        SliderFromUIKit(value: .constant(0.5), alpha: 50)
     }
 }
